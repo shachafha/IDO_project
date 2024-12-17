@@ -17,7 +17,7 @@ def create_calendar():
     st.markdown(f"<h1 style='text-align: center;'>30 DAYS TO 30</h1>", unsafe_allow_html=True)
 
     # Day names (abbreviated)
-    day_names = list(calendar.day_abbr)
+    day_names = ['Sun','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
     # Create a list to represent the calendar (rows and columns)
     calendar_table = []

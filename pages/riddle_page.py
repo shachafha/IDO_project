@@ -1,13 +1,11 @@
 import streamlit as st
 import json
-import random
 from datetime import datetime
-import base64
 
 # Set page configuration
-st.set_page_config(page_title="Daily Riddle", layout="wide")
+st.set_page_config(page_title="חידת היום", layout="wide")
 
-# Hide Streamlit default sidebar
+# Hide Streamlit default sidebar and set RTL styling
 st.markdown("""
 <style>
     [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
@@ -17,6 +15,34 @@ st.markdown("""
     [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
         visibility:hidden;
     }
+    /* RTL styling */
+    .rtl {
+        direction: rtl;
+        text-align: right;
+        font-family: Arial, sans-serif;
+    }
+    /* Right-align buttons */
+    .stButton>button {
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+        background-color: #A7C7E7 !important;
+        color: black;
+        float: right;
+        margin: 10px 0;
+    }
+    /* Right-align input box label */
+    label[data-testid="stLabel"] {
+        text-align: right;
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        direction: rtl;
+    }
+    /* Align content spacing */
+    .block-container {
+        direction: rtl;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -24,65 +50,56 @@ st.markdown("""
 with open('riddles.json', 'r') as f:
     riddles = json.load(f)
 
-
 # Function to get query parameters from the URL
 def get_query_param(param):
     query_string = st.query_params
     return query_string.get(param, None)
 
-# Back to calendar button
-st.markdown("""
-<style>
-.stButton>button {
-    width: 200px;
-    height: 50px;
-    font-size: 16px;
-    background-color: #007bff !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-if st.button("Back to Calendar", type="primary"):
+# Back to calendar button aligned to the right
+st.markdown("<div style='text-align: right;'>", unsafe_allow_html=True)
+if st.button("חזרה ללוח", type="primary"):
     st.switch_page("main_calendar.py")
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Extract the selected date from query parameters
 selected_date = get_query_param("date")
 
 if not selected_date:
-    st.error("No date provided. Please go back to the calendar.")
+    st.error("לא נבחר תאריך. חזור ללוח.")
     st.stop()
 
 # Validate the date format
 try:
     datetime.strptime(selected_date, '%Y-%m-%d')
 except ValueError:
-    st.error("Invalid date format. Please go back to the calendar.")
+    st.error("פורמט תאריך לא תקין. חזור ללוח.")
     st.stop()
 
 # Get the selected date's riddle
 riddle_data = riddles.get(selected_date)
 
 if not riddle_data:
-    st.error(f"No riddle found for {selected_date}")
+    st.error(f"לא נמצאה חידה עבור {selected_date}")
     st.stop()
 
-# Display the riddle
-st.title(f"Riddle for {datetime.strptime(selected_date, '%Y-%m-%d').strftime('%B %d, %Y')}")
-st.markdown(f"### {riddle_data['riddle']}")
+# Display the riddle in RTL
+st.markdown(f"<h1 class='rtl'>חידת היום - {datetime.strptime(selected_date, '%Y-%m-%d').strftime('%d/%m/%Y')}</h1>", unsafe_allow_html=True)
+st.markdown(f"<div class='rtl'><h3>{riddle_data['riddle']}</h3></div>", unsafe_allow_html=True)
 
-# Input for answer
-user_answer = st.text_input("Enter your answer:", key="riddle_answer")
+# Input for answer with aligned label
+user_answer = st.text_input("כתוב את תשובתך כאן:", key="riddle_answer", label_visibility="visible")
 
-# Submit button
-if st.button("Submit Answer", type="primary"):
+# Submit button aligned to the right
+st.markdown("<div style='text-align: right;'>", unsafe_allow_html=True)
+if st.button("שלח תשובה", type="primary"):
     # Normalize answers (lowercase, strip whitespace)
     correct_answer = riddle_data['answer'].lower().strip()
     user_answer_normalized = user_answer.lower().strip()
 
+    # Check answer
     if user_answer_normalized == correct_answer:
-        # Correct answer
-        st.success("You did it! 🎉")
+        st.success("כל הכבוד! 🎉")
         st.balloons()
     else:
-        # Incorrect answer
-        st.error("Oops! That's not quite right. Try again!")
+        st.error("טעות. נסה שוב!")
+st.markdown("</div>", unsafe_allow_html=True)

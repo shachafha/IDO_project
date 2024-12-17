@@ -1,6 +1,9 @@
+import time
+
 import streamlit as st
 import json
 from datetime import datetime
+import base64
 
 # Set page configuration
 st.set_page_config(page_title="חידת היום", layout="wide")
@@ -46,7 +49,28 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+# Function to convert an image file to base64 encoding
+def get_base64(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
 
+# Function to set the background using base64 encoded image
+def set_background(png_file):
+    bin_str = get_base64(png_file)
+    page_bg_img = f'''
+    <style>
+    .stApp {{
+        background-image: url("data:image/png;base64,{bin_str}");
+        background-size: cover;
+        background-attachment: local;
+    }}
+    </style>
+    '''
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
+# Set the background image (update the file path as needed)
+set_background('image_back.jpeg')
 # Load riddles
 with open('riddles.json', 'r') as f:
     riddles = json.load(f)
@@ -103,4 +127,7 @@ if st.button("שלח תשובה", type="primary"):
         st.balloons()
     else:
         st.error("טעות. נסה שוב!")
+        set_background('red_pastel.png')
+        time.sleep(0.5)
+        set_background('image_back.jpeg')
 st.markdown("</div>", unsafe_allow_html=True)

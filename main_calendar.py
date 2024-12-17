@@ -2,12 +2,11 @@ import streamlit as st
 import calendar
 from datetime import date, timedelta
 import json
-import locale
 
 # Set page configuration
 st.set_page_config(page_title="Riddle Calendar", layout="wide")
 
-# Hide Streamlit default sidebar
+# Hide Streamlit default sidebar and add button styling
 st.markdown("""
 <style>
     [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
@@ -17,18 +16,30 @@ st.markdown("""
     [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
         visibility:hidden;
     }
-    .big-font {
-        font-size:20px !important;
-        text-align: center;
-    }
-    .stButton>button {
+
+    /* Button styling */
+    .calendar-button {
         width: 100%;
-        height: 150px;
-        font-size: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        height: 70px;  /* Adjust height */
+        font-size: 16px;
+        text-align: center;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .calendar-button:hover {
+        transform: scale(1.05); /* Hover effect */
+    }
+    .current-day { background-color: #007bff; color: white; }
+    .future-day { background-color: #d3d3d3; color: black; }
+    .past-day { background-color: #28a745; color: white; }
+
+    /* Center align titles */
+    .day-title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -37,69 +48,54 @@ st.markdown("""
 with open('riddles.json', 'r') as f:
     riddles = json.load(f)
 
-
 # Function to create the calendar
 def create_calendar():
     # Set the start and end dates
-    start_date = date(2024, 1, 9)
-    end_date = date(2024, 2, 2)
+    start_date = date(2024, 12, 9)
+    end_date = date(2025, 1, 2)
 
+    # Display calendar title
+    st.markdown("<h1 style='text-align: center;'>30 DAYS TO 30</h1>", unsafe_allow_html=True)
 
-    # Display current month and year
-    st.markdown(f"<h1 style='text-align: center;'>30 DAYS TO 30</h2>", unsafe_allow_html=True)
-
-    # Create columns for calendar
-    cols = st.columns(7)
-
-    # Current date tracker
-    current_date = start_date
-
-    # Day names (abbreviated)
+    # Day names row
     day_names = list(calendar.day_abbr)
-
-    # Display day names
+    day_cols = st.columns(7)  # Create 7 columns for day headers
     for i, day in enumerate(day_names):
-        cols[i].markdown(f"<h3 style='text-align: center;'>{day}</h3>", unsafe_allow_html=True)
+        day_cols[i].markdown(f"<div class='day-title'>{day}</div>", unsafe_allow_html=True)
 
-    # Reset columns
-    cols = st.columns(7)
+    # Initialize calendar grid
+    current_date = start_date
+    col_index = current_date.weekday()  # Start from the correct weekday
+    cols = st.columns(7)  # Create 7 columns for dates
 
-    # Fill initial empty spaces
-    start_weekday = start_date.weekday()
-    for i in range(start_weekday):
-        cols[i].write("")
-
-    # Track column index
-    col_index = start_weekday
-
-    # Create buttons for each date
+    # Loop through the date range
     while current_date <= end_date:
-        # Check if date has a riddle
         date_str = current_date.strftime("%Y-%m-%d")
-        has_riddle = date_str in riddles
 
-        # Create button with day and month
-        button_color = "green" if has_riddle else "gray"
-        button_text = f"{current_date.day}\n{current_date.strftime('%b')}"
+        # Determine button color class
+        if current_date == date.today():
+            button_class = "current-day"
+        elif current_date > date.today():
+            button_class = "future-day"
+        else:
+            button_class = "past-day"
 
-        # Display button
-        if cols[col_index].button(button_text, key=date_str, type="primary"):
-            # Store selected date in session state
-            st.session_state['selected_date'] = date_str
-            # Navigate to riddle page
-            st.switch_page("pages/riddle_page.py")
+        # Button content
+        button_text = f"{current_date.day}<br>{current_date.strftime('%b')}"
+
+        # Create a button (simulated with markdown)
+        cols[col_index].markdown(
+            f"<button class='calendar-button {button_class}'>{button_text}</button>",
+            unsafe_allow_html=True
+        )
 
         # Move to next column
         col_index += 1
-
-        # Start new row if end of week
-        if col_index > 6:
+        if col_index > 6:  # Reset to the first column after Sunday
             col_index = 0
-            cols = st.columns(7)
+            cols = st.columns(7)  # Create a new row of columns
 
-        # Move to next date
         current_date += timedelta(days=1)
-
 
 # Run the calendar
 create_calendar()

@@ -20,67 +20,74 @@ st.markdown("""
     }
 
     /* Responsive calendar grid */
-    .stColumns > div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5px;
-        box-sizing: border-box;
+    [data-testid="stColumns"] {
+        display: grid !important;
+        grid-template-columns: repeat(7, 1fr) !important;
+        gap: 5px !important;
+        width: 100% !important;
+    }
+
+    /* Ensure all column children maintain grid layout */
+    [data-testid="stColumns"] > div {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 2px !important;
+        box-sizing: border-box !important;
     }
 
     /* Calendar day buttons */
-    .stButton>button, .custom-button {
-        width: 100%;
-        min-height: 80px;
-        max-height: 120px;
-        font-size: 16px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .custom-button {
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        min-height: 50px !important;
+        max-height: 150px !important;
+        font-size: 14px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
         background-color: #007bff !important;
-        border: none;
-        border-radius: 8px;
-        padding: 10px;
-        white-space: normal;
-        word-wrap: break-word;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 5px !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        text-align: center !important;
     }
 
     /* Responsive text sizing */
     @media (max-width: 600px) {
-        .stButton>button, .custom-button {
-            min-height: 60px;
-            max-height: 90px;
-            font-size: 14px;
+        [data-testid="stColumns"] {
+            grid-template-columns: repeat(7, 1fr) !important;
+            gap: 3px !important;
+        }
+
+        .custom-button {
+            font-size: 12px !important;
+            min-height: 40px !important;
         }
 
         /* Center day names */
-        .stColumns > div > h3 {
-            margin: 0;
-            font-size: 14px;
+        [data-testid="stColumns"] > div > h3 {
+            margin: 0 !important;
+            font-size: 12px !important;
         }
     }
 
     @media (max-width: 400px) {
-        .stButton>button, .custom-button {
-            min-height: 50px;
-            max-height: 80px;
-            font-size: 12px;
+        .custom-button {
+            font-size: 10px !important;
+            min-height: 35px !important;
         }
-    }
-
-    /* Ensure text doesn't overflow */
-    .stButton>button span, .custom-button span {
-        text-align: center;
-        line-height: 1.2;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
     }
 
     /* Big font class */
     .big-font {
         font-size: 20px !important;
-        text-align: center;
+        text-align: center !important;
     }
 </style>
 """, unsafe_allow_html=True)

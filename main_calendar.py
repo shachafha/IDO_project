@@ -14,7 +14,7 @@ def create_calendar():
     end_date = date(2025, 1, 2)
 
     # Display current month and year
-    st.markdown(f"<h1 style='text-align: center;'>30 DAYS TO 30</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1>30 DAYS TO 30</h1>", unsafe_allow_html=True)
 
     # Day names (abbreviated)
     day_names = list(calendar.day_abbr)

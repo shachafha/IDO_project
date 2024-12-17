@@ -25,14 +25,12 @@ with open('riddles.json', 'r') as f:
     riddles = json.load(f)
 
 
-# Function to create balloon animation
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+# Function to get query parameters from the URL
+def get_query_param(param):
+    query_string = st.query_params
+    return query_string.get(param, None)
 
-
-# Navigation buttons
+# Back to calendar button
 st.markdown("""
 <style>
 .stButton>button {
@@ -43,17 +41,24 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Back to calendar button
 if st.button("Back to Calendar", type="primary"):
     st.switch_page("main_calendar.py")
 
-# Check if a date is selected
-if 'selected_date' not in st.session_state:
-    st.error("No date selected. Please go back to the calendar.")
+# Extract the selected date from query parameters
+selected_date = get_query_param("date")
+
+if not selected_date:
+    st.error("No date provided. Please go back to the calendar.")
+    st.stop()
+
+# Validate the date format
+try:
+    datetime.strptime(selected_date, '%Y-%m-%d')
+except ValueError:
+    st.error("Invalid date format. Please go back to the calendar.")
     st.stop()
 
 # Get the selected date's riddle
-selected_date = st.session_state['selected_date']
 riddle_data = riddles.get(selected_date)
 
 if not riddle_data:

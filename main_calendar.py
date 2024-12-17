@@ -93,6 +93,7 @@ def create_calendar():
         table_html += "</tr>"
     table_html += "</table>"
 
+
     st.markdown(table_html, unsafe_allow_html=True)
 
 # Run the calendar

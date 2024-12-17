@@ -44,7 +44,7 @@ def create_calendar():
                 button_text = f"{current_date.day}\n{current_date.strftime('%b')}"
                 button_html = f"""
                 <a href='/riddle_page?date={date_str}' target='_self'>
-                    <button style='background-color:{button_color}; width: 60%; height: 60px; font-size: 18px; border: none; border-radius: 12px;'>
+                    <button style='background-color:{button_color}; width: 100%; height: 60px; font-size: 18px; border: none; border-radius: 12px;'>
                         {button_text}
                     </button>
                 </a>
@@ -54,7 +54,7 @@ def create_calendar():
                 button_clickable = False
                 button_text = f"{current_date.day}\n{current_date.strftime('%b')}"
                 button_html = f"""
-                <button style='background-color:{button_color}; width: 60%; height: 60px; font-size: 18px; border: none; border-radius: 12px;' disabled>
+                <button style='background-color:{button_color}; width: 100%; height: 60px; font-size: 18px; border: none; border-radius: 12px;' disabled>
                     {button_text}
                 </button>
                 """
@@ -63,7 +63,7 @@ def create_calendar():
                 button_clickable = False
                 button_text = f"{current_date.day}\n{current_date.strftime('%b')}"
                 button_html = f"""
-                <button style='background-color:{button_color}; width: 60%; height: 60px; font-size: 18px; border: none; border-radius: 12px;' disabled>
+                <button style='background-color:{button_color}; width: 100%; height: 60px; font-size: 18px; border: none; border-radius: 12px;' disabled>
                     {button_text}
                 </button>
                 """
@@ -85,11 +85,11 @@ def create_calendar():
         calendar_table.append(row)
 
     # Create a markdown table representation of the calendar
-    table_html = "<table style='width: 60%; border-collapse: collapse;'>"
+    table_html = "<table style='width: 70%; border-collapse: collapse;'>"
     for row in calendar_table:
         table_html += "<tr>"
         for day in row:
-            table_html += f"<td style='text-align: center; padding: 10px; border: none;'>{day}</td>"
+            table_html += f"<td style='text-align: center; padding: 1px; border: none;'>{day}</td>"
         table_html += "</tr>"
     table_html += "</table>"
 

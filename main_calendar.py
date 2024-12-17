@@ -7,7 +7,7 @@ import locale
 # Set page configuration
 st.set_page_config(page_title="Riddle Calendar", layout="wide")
 
-# Hide Streamlit default sidebar
+# Hide Streamlit default sidebar and add custom styles
 st.markdown("""
 <style>
     [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
@@ -22,8 +22,8 @@ st.markdown("""
         text-align: center;
     }
     .stButton>button {
-        width: 70%;
-        height: 20%;
+        width: 100%;
+        height: 100px;
         font-size: 20px;
         display: flex;
         flex-direction: column;
@@ -32,6 +32,24 @@ st.markdown("""
         background-color: #007bff !important;
         border: none;  /* Remove the border */
         border-radius: 12px;  /* Add rounded corners */
+    }
+
+    /* Fixed-width columns */
+    .stColumn {
+        width: 120px !important;
+        min-width: 120px !important;
+        max-width: 120px !important;
+        flex: none !important;
+    }
+    .stColumn > div {
+        width: 100% !important;
+    }
+
+    /* Centered column content */
+    .stColumn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -104,7 +122,7 @@ def create_calendar():
         # Display button without functionality for past/future days
         if not button_clickable:
             cols[col_index].markdown(
-                f"<button style='background-color:{button_color}; width: 70%; height: 20%; font-size: 20px; text-align: center; border: none; border-radius: 12px;'>{button_text}</button>",
+                f"<button style='background-color:{button_color}; width: 100%; height: 100px; font-size: 20px; text-align: center; border: none; border-radius: 12px;'>{button_text}</button>",
                 unsafe_allow_html=True)
 
         # Move to next column

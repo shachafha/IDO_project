@@ -39,18 +39,18 @@ def create_calendar():
 
             # Determine button color based on the date's status
             if current_date == date.today():
-                button_color = "blue"
+                button_color = "#A7C7E7"  # Pastel blue
                 button_clickable = True
                 button_text = f"{current_date.day}\n{current_date.strftime('%b')}"
                 button_html = f"""
-                <a href='/riddle_page?date={date_str}' target='_blank'>
+                <a href='/riddle_page?date={date_str}' target='_self'>
                     <button style='background-color:{button_color}; width: 100%; height: 60px; font-size: 18px; border: none; border-radius: 12px;'>
                         {button_text}
                     </button>
                 </a>
                 """
             elif current_date > date.today():
-                button_color = "gray"
+                button_color = "#D1D1D1"  # Pastel gray
                 button_clickable = False
                 button_text = f"{current_date.day}\n{current_date.strftime('%b')}"
                 button_html = f"""
@@ -59,7 +59,7 @@ def create_calendar():
                 </button>
                 """
             else:
-                button_color = "green"
+                button_color = "#A8E6CF"  # Pastel green
                 button_clickable = False
                 button_text = f"{current_date.day}\n{current_date.strftime('%b')}"
                 button_html = f"""
@@ -85,11 +85,11 @@ def create_calendar():
         calendar_table.append(row)
 
     # Create a markdown table representation of the calendar
-    table_html = "<table style='width: 100%;'>"
+    table_html = "<table style='width: 100%; border-collapse: collapse;'>"
     for row in calendar_table:
         table_html += "<tr>"
         for day in row:
-            table_html += f"<td style='text-align: center; padding: 10px;'>{day}</td>"
+            table_html += f"<td style='text-align: center; padding: 10px; border: none;'>{day}</td>"
         table_html += "</tr>"
     table_html += "</table>"
 

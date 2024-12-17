@@ -85,7 +85,7 @@ def create_calendar():
         calendar_table.append(row)
 
     # Create a markdown table representation of the calendar
-    table_html = "<table style='width: 100%; border-collapse: collapse;'>"
+    table_html = "<table style='width: 60%; border-collapse: collapse;'>"
     for row in calendar_table:
         table_html += "<tr>"
         for day in row:

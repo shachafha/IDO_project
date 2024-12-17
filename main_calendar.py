@@ -5,7 +5,7 @@ import json
 import locale
 
 # Set page configuration
-st.set_page_config(page_title="Riddle Calendar")
+st.set_page_config(page_title="Riddle Calendar", layout="wide")
 
 # Hide Streamlit default sidebar
 st.markdown("""
@@ -22,8 +22,8 @@ st.markdown("""
         text-align: center;
     }
     .stButton>button {
-        width: 100%;
-        height: 150px;
+        width: 70%;
+        height: 20%;
         font-size: 20px;
         display: flex;
         flex-direction: column;
@@ -104,7 +104,7 @@ def create_calendar():
         # Display button without functionality for past/future days
         if not button_clickable:
             cols[col_index].markdown(
-                f"<button style='background-color:{button_color}; width: 100%; height: 150px; font-size: 20px; text-align: center; border: none; border-radius: 12px;'>{button_text}</button>",
+                f"<button style='background-color:{button_color}; width: 70%; height: 20%; font-size: 20px; text-align: center; border: none; border-radius: 12px;'>{button_text}</button>",
                 unsafe_allow_html=True)
 
         # Move to next column

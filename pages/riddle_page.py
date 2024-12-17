@@ -29,6 +29,7 @@ st.markdown("""
         background-color: #A7C7E7 !important;
         color: black;
         float: right;
+        border: none; 
         margin: 10px 0;
     }
     /* Right-align input box label */

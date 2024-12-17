@@ -2,6 +2,30 @@ import streamlit as st
 import calendar
 from datetime import date, timedelta
 import json
+import base64
+
+# Function to convert an image file to base64 encoding
+def get_base64(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+# Function to set the background using base64 encoded image
+def set_background(png_file):
+    bin_str = get_base64(png_file)
+    page_bg_img = f'''
+    <style>
+    .stApp {{
+        background-image: url("data:image/png;base64,{bin_str}");
+        background-size: cover;
+        background-attachment: local;
+    }}
+    </style>
+    '''
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
+# Set the background image (update the file path as needed)
+set_background('image_back.jpeg')
 
 # Load riddles
 with open('riddles.json', 'r') as f:
@@ -17,7 +41,7 @@ def create_calendar():
     st.markdown(f"<h1 style='text-align: center;'>30 DAYS TO 30</h1>", unsafe_allow_html=True)
 
     # Day names (abbreviated)
-    day_names = ['Sun','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    day_names = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
     # Create a list to represent the calendar (rows and columns)
     calendar_table = []
@@ -85,14 +109,13 @@ def create_calendar():
         calendar_table.append(row)
 
     # Create a markdown table representation of the calendar
-    table_html = "<table style='width: 50%; border-collapse: collapse;'>"
+    table_html = "<table style='width: 50%; border-collapse: collapse; margin: auto;'>"
     for row in calendar_table:
         table_html += "<tr>"
         for day in row:
             table_html += f"<td style='text-align: center; padding: 1px; border: none;'>{day}</td>"
         table_html += "</tr>"
     table_html += "</table>"
-
 
     st.markdown(table_html, unsafe_allow_html=True)
 

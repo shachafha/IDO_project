@@ -5,7 +5,7 @@ import json
 import locale
 
 # Set page configuration
-st.set_page_config(page_title="Riddle Calendar", layout="wide")
+st.set_page_config(page_title="Riddle Calendar")
 
 # Hide Streamlit default sidebar
 st.markdown("""

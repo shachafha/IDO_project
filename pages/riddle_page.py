@@ -37,6 +37,7 @@ st.markdown("""
     width: 200px;
     height: 50px;
     font-size: 16px;
+    background-color: #007bff !important;
 }
 </style>
 """, unsafe_allow_html=True)

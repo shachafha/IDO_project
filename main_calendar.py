@@ -14,7 +14,7 @@ def create_calendar():
     end_date = date(2025, 1, 2)
 
     # Display current month and year
-    st.markdown(f"<h1>30 DAYS TO 30</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style='text-align: center;'>30 DAYS TO 30</h1>", unsafe_allow_html=True)
 
     # Day names (abbreviated)
     day_names = list(calendar.day_abbr)
@@ -44,7 +44,7 @@ def create_calendar():
                 button_text = f"{current_date.day}\n{current_date.strftime('%b')}"
                 button_html = f"""
                 <a href='/riddle_page?date={date_str}' target='_self'>
-                    <button style='background-color:{button_color}; width: 100%; height: 60px; font-size: 15px; border: none; border-radius: 12px;'>
+                    <button style='background-color:{button_color}; width: 100%; height: 60px; font-size: 15px; color: black; border: none; border-radius: 12px;'>
                         {button_text}
                     </button>
                 </a>
@@ -54,7 +54,7 @@ def create_calendar():
                 button_clickable = False
                 button_text = f"{current_date.day}\n{current_date.strftime('%b')}"
                 button_html = f"""
-                <button style='background-color:{button_color}; width: 100%; height: 60px; font-size: 15px; border: none; border-radius: 12px;' disabled>
+                <button style='background-color:{button_color}; width: 100%; height: 60px; font-size: 15px; color: black; border: none; border-radius: 12px;' disabled>
                     {button_text}
                 </button>
                 """
@@ -63,7 +63,7 @@ def create_calendar():
                 button_clickable = False
                 button_text = f"{current_date.day}\n{current_date.strftime('%b')}"
                 button_html = f"""
-                <button style='background-color:{button_color}; width: 100%; height: 60px; font-size: 15px; border: none; border-radius: 12px;' disabled>
+                <button style='background-color:{button_color}; width: 100%; height: 60px; font-size: 15px;color: black; border: none; border-radius: 12px;' disabled>
                     {button_text}
                 </button>
                 """

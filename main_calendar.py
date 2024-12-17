@@ -25,7 +25,7 @@ def set_background(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Set the background image (update the file path as needed)
-set_background('image_back.jpeg')
+#set_background('image_back.jpeg')
 
 # Load riddles
 with open('riddles.json', 'r') as f:

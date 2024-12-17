@@ -56,21 +56,30 @@ def get_base64(bin_file):
     return base64.b64encode(data).decode()
 
 # Function to set the background using base64 encoded image
-def set_background(png_file):
-    bin_str = get_base64(png_file)
-    page_bg_img = f'''
-    <style>
-    .stApp {{
-        background-image: url("data:image/png;base64,{bin_str}");
-        background-size: cover;
-        background-attachment: local;
-    }}
-    </style>
-    '''
+def set_background(png_file=None):
+    if png_file:
+        bin_str = get_base64(png_file)
+        page_bg_img = f'''
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{bin_str}");
+            background-size: cover;
+            background-attachment: local;
+        }}
+        </style>
+        '''
+    else:
+        page_bg_img = '''
+        <style>
+        .stApp {
+            background-image: linear-gradient(#ffffff, #ffffff);
+        }
+        </style>
+        '''
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Set the background image (update the file path as needed)
-set_background('image_back.jpeg')
+#set_background('image_back.jpeg')
 # Load riddles
 with open('riddles.json', 'r') as f:
     riddles = json.load(f)
@@ -129,5 +138,5 @@ if st.button("שלח תשובה", type="primary"):
         st.error("טעות. נסה שוב!")
         set_background('red_pastel.png')
         time.sleep(0.5)
-        set_background('image_back.jpeg')
+        set_background()
 st.markdown("</div>", unsafe_allow_html=True)

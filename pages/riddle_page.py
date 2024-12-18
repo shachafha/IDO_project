@@ -137,6 +137,6 @@ if st.button("שלח תשובה", type="primary"):
     else:
         st.error("טעות. נסה שוב!")
         set_background('red_pastel.png')
-        time.sleep(0.5)
+        time.sleep(0.6)
         set_background()
 st.markdown("</div>", unsafe_allow_html=True)

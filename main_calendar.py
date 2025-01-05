@@ -34,7 +34,7 @@ with open('riddles.json', 'r') as f:
 # Function to create the calendar
 def create_calendar():
     # Set the start and end dates
-    start_date = date(2024, 1, 9)
+    start_date = date(2025, 1, 9)
     end_date = date(2025, 2, 7)
 
     # Display current month and year

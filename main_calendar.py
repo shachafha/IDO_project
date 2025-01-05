@@ -123,4 +123,4 @@ def create_calendar():
 create_calendar()
 
 # add text about the creator of this page, Shachaf the greatest sister in the world
-st.markdown(f"<h5 style='text-align: center;'>Created by Shachaf the greatest sister in the world</h1>", unsafe_allow_html=True)
+st.markdown(f"<p style='text-align: center;'>Created by Shachaf the greatest sister in the world</p>", unsafe_allow_html=True)

@@ -34,7 +34,7 @@ with open('riddles.json', 'r') as f:
 # Function to create the calendar
 def create_calendar():
     # Set the start and end dates
-    start_date = date(2025, 1, 5)
+    start_date = date(2025, 1, 9)
     end_date = date(2025, 2, 7)
 
     # Display current month and year
@@ -51,7 +51,7 @@ def create_calendar():
 
     # Current date tracker
     current_date = start_date
-    col_index = start_date.weekday()  # Start position based on the weekday
+    col_index = 4 # Start position based on the weekday
 
     # Create the calendar grid with buttons for each day
     row = [""] * 7  # Initialize an empty row for the first week

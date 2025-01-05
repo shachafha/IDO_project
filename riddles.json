@@ -1,106 +1,152 @@
 {
-    "2024-12-18": {
-        "riddle": "היי אני חידה בעברית התשובה היא שלום?",
-        "answer": "שלום"
-    },
     "2025-01-09": {
-        "riddle": "The more you take, the more you leave behind. What am I?",
-        "answer": "footsteps"
+        "riddle": "נפגשנו לראשונה בברלין, היה מתוק וחמים. ומאז, כל פעם שאנחנו נפגשים שוב, אנחנו ישר בדרך למיטה.",
+        "answer": ["בייליס"],
+        "clue": "קפה עם?"
     },
     "2025-01-10": {
-        "riddle": "The more you take, the more you leave behind. What am I?",
-        "answer": "footsteps"
+        "riddle": "אידיאלית פעם בשבוע, ריאלית פעם בשבועיים, בפועל פעם בחצי שנה",
+        "answer": ["ניקיון הבית", "ניקיון", "רובוט"],
+        "clue": "ציפי"
     },
     "2025-01-11": {
-        "riddle": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
-        "answer": "echo"
+        "riddle": "תחביב חדש, מותג ישן. אני חי אבל לא, ירוק אך לא צומח. הזהרו להפיל אותי, כי זה ישבור לי את הלב.",
+        "answer": ["לגו פרחים", "לגו"],
+        "clue": "שחף"
     },
     "2025-01-12": {
-        "riddle": "What has keys, but no locks; space, but no room; and you can enter, but not go in?",
-        "answer": "keyboard"
+        "riddle": "אדום לבן שחור, זו לא קבוצת כדורגל - אבל הצוות החזק לא מפסיק לבעבע ולהתפרץ.",
+        "answer": ["קוקה קולה", "עבודה"],
+        "clue": "צנים"
     },
     "2025-01-13": {
-        "riddle": "I am not alive, but I grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. What am I?",
-        "answer": "fire"
+        "riddle": "מתוק, אדום ומשולש - בריא\nמתוק אדום ומשולש - גרוע לשיניים",
+        "answer": ["תותים", "תותים בקצפת"],
+        "clue": "הכינוי"
     },
     "2025-01-14": {
-        "riddle": "What can travel around the world while staying in a corner?",
-        "answer": "stamp"
+        "riddle": "\"ווקס און, ווקס אוף\" צעק אז הלקוח\n\"اتركني مع والدتك\" ענה לו העובד",
+        "answer": ["ניקוי אוטו", "ניקיון אוטו", "שטיפה", "שטיפת אוטו", "שטיפת רכב"],
+        "clue": "יילו"
     },
     "2025-01-15": {
-        "riddle": "I have branches, but no fruit, trunk or leaves. What am I?",
-        "answer": "bank"
+        "riddle": "הוא עוטף אותך כשקר, מנגב לך את הדמעות, ותמיד שם כשאת צריכה אותו.",
+        "answer": ["חלוק", "חלוק אמבטיה", "חלוק מקלחת"],
+        "clue": "הוא גם איתך במסאז׳ים"
     },
     "2025-01-16": {
-        "riddle": "What has a head, a tail, is brown, and has no legs?",
-        "answer": "penny"
+        "riddle": "אחת מההתחלה\nאחת מהיסוד\nאחת מהעץ\nואחת מהשמירה",
+        "answer": ["קורל", "אור", "אלונה", "קרן"],
+        "clue": ""
     },
     "2025-01-17": {
-        "riddle": "I'm tall when I'm young, and I'm short when I'm old. What am I?",
-        "answer": "candle"
+        "riddle": "אני מלא בהרפתקאות וסיפורים,\nעולמות קסומים של צבע ועכברים.\nמנסיכות ועד גיבורים נועזים,\nמביא שמחה לכל המינויים",
+        "answer": ["מנוי לדיסני פלוס", "דיסני", "דיסני פלוס"],
+        "clue": ""
     },
     "2025-01-18": {
-        "riddle": "What goes up but never comes down?",
-        "answer": "age"
+        "riddle": "הבוסט המושלם ביום קשה\nישר, לצד או באלכסון\nההחלטה היא רק בידייך",
+        "answer": ["שינת צהריים", "שנצ", "שנ\"צ"],
+        "clue": ""
     },
     "2025-01-19": {
-        "riddle": "I have keys, but no locks. I have space, but no room. You can enter, but can't go in. What am I?",
-        "answer": "keyboard"
+        "riddle": "תתעוררי, תנעלי ותלכי",
+        "answer": ["קומי", "נעלי קומי", "נעליים"],
+        "clue": "בוקר טוב"
     },
     "2025-01-20": {
-        "riddle": "What has many keys but can't open a single lock?",
-        "answer": "piano"
+        "riddle": "היא מגיעה מרחוק, אבל תמיד מרגישה פה בבית\nאם הכל הולך חלק היא תהפוך לאמריקאית",
+        "answer": ["הוד"],
+        "clue": ""
     },
     "2025-01-21": {
-        "riddle": "The more you take, the more you leave behind. What am I?",
-        "answer": "footsteps"
+        "riddle": "קשה מבחוץ אך רך מבפנים, \nעם כיסים מלאים בכל טוב",
+        "answer": ["עוגיות שוקולד ציפס", "עוגיות"],
+        "clue": "קרין גורן"
     },
     "2025-01-22": {
-        "riddle": "I am an odd number. Take away a letter and I become even. What number am I?",
-        "answer": "seven"
+        "riddle": "הגענו לאמצע! נגענו בקיר\nהמתנה של היום היא משהו מזהיר\nעם מרגו רובי או ליידי גאגא\nהמלך של החבילה תמיד נמצא בה",
+        "answer": ["גוקר", "הגוקר"],
+        "clue": ""
     },
     "2025-01-23": {
-        "riddle": "What can you catch, but not throw?",
-        "answer": "cold"
+        "riddle": "השלם גדול מסך חלקיו\nאבל האם השלם יעזור לי עכשיו?",
+        "answer": ["פאזל"],
+        "clue": "קלאסי גל"
     },
     "2025-01-24": {
-        "riddle": "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?",
-        "answer": "map"
+        "riddle": "שלוש חברות, לא תמיד מסתדרות\nאבל בסוף הם…. סבבה \nהעיקר שפאפי מרוצה",
+        "answer": ["שחף ואדווה", "אדווה ושחף", "אחיות"],
+        "clue": "רחם"
     },
     "2025-01-25": {
-        "riddle": "What has a neck but no head?",
-        "answer": "bottle"
+        "riddle": "אני נושא בתוכי סוד עטוף בהגנה כפולה,\nהאחד קשיח אך עדין, השני חלק ורך.\nנולדתי מתוך רעיון של הפתעה מתוקה,\nומי שמכיר אותי יודע - השמחה תמיד כפולה.",
+        "answer": ["קינדר"],
+        "clue": "הכי אהוב"
     },
     "2025-01-26": {
-        "riddle": "What runs but never walks, has a mouth but never talks, has a head but never weeps, has a bed but never sleeps?",
-        "answer": "river"
+        "riddle": "אין תפריט ואין מלצר,\nאני תלויה רק במי שיצר.",
+        "answer": ["ארוחה ביתית", "אוכל ביתי"],
+        "clue": "מטבח"
     },
     "2025-01-27": {
-        "riddle": "What belongs to you, but other people use it more than you?",
-        "answer": "name"
+        "riddle": "אני תמיד מגיע בסוף השמחה\nמרחוק או מקרוב, הדרך לא תמיד בטוחה\nבשביל לזמן אותי רק צריך ללחוץ על כפתורים\nואני משמח את כולם, ילדים וגם הורים",
+        "answer": ["קינוח", "קינוח בוולט", "קינוח מהוולט"],
+        "clue": "אפליקציית משלוחים"
     },
     "2025-01-28": {
-        "riddle": "I am taken from a mine and shut up in a wooden case, from which I am never released, and yet I am used by everyone. What am I?",
-        "answer": "pencil lead"
+        "riddle": "איתך מאז ומעולם\nלפעמים הכל מושלם\nחלק באו חלק הלכו\nאך סודות נשארו ולא יצאו",
+        "answer": ["הגלייך", "אופירה", "מחנה המרכז small"],
+        "clue": ""
     },
     "2025-01-29": {
-        "riddle": "What has a head and a tail but no body?",
-        "answer": "coin"
+        "riddle": "אביגיל מאירה לנו את החיים\nאבל אני אאיר לך את הבית",
+        "answer": ["נר", "נר ריחני"],
+        "clue": "וגם אריח את הבית"
     },
     "2025-01-30": {
-        "riddle": "What can you break, even if you never pick it up or touch it?",
-        "answer": "promise"
+        "riddle": "החידה הזו תתן לך כח אדיר\nכי הקופון הזה הוא משהו נדיר\nלא צריך טרגט אטאק\nכשתקראי לי אני בא כמו מברק",
+        "answer": ["מטלה", "העברת מטלה", "מטלות בית"],
+        "clue": "שטיפת כלים"
     },
     "2025-01-31": {
-        "riddle": "What gets wet while drying?",
-        "answer": "towel"
+        "riddle": "עשית יותר חדרים ממעצבת פנים\nאז הגיע הזמן שכולנו נפנים\nחוקרת במשטרה אולי לא תהיי\nאבל בבית שלנו הכל אפשרי",
+        "answer": ["משחק חקירות", "משחק חדר בריחה", "חדר בריחה ביתי"],
+        "clue": "חדר בריחה"
     },
     "2025-02-01": {
-        "riddle": "What has many teeth, but cannot bite?",
-        "answer": "comb"
+        "riddle": "התקבלת אלינו בזרועות פתוחות\nועכשיו כבר ממך אכפת לנו פחות",
+        "answer": ["מויאל", "משפחת מויאל", "המויאלים"],
+        "clue": "מ\"מ"
     },
     "2025-02-02": {
-        "riddle": "I am always hungry; I must always be fed. The finger I touch will soon turn red. What am I?",
-        "answer": "fire"
+        "riddle": "פגשת כבר במתנה הזו מקודם\nוזה היה בבית הקודם\nאבל בית חדש לא שלם \nבלי דברים מוגזמים מאליהם",
+        "answer": ["לגו"],
+        "clue": "שוב שחף"
+    },
+    "2025-02-03": {
+        "riddle": "בחורף הזה, זה קורה\nלא על כוכב, לא בחום, ולא בעיר \nאם נתרגם לאנגלית\nנוכל את החידה להבהיר",
+        "answer": ["ערב סרט", "סרט"],
+        "clue": "פופקורן"
+    },
+    "2025-02-04": {
+        "riddle": "את ואביגיל זה סיפור אהבה \nאת זה כולם יודעים\nאבל יש דברים שהם רק שלכן \nמזל שיש מישהו עם תיעודים",
+        "answer": ["תמונה", "תמונות"],
+        "clue": "תלייה"
+    },
+    "2025-02-05": {
+        "riddle": "עוד מעט סיימנו, ממש לקראת הסוף \nהיום שלו חיכינו מגיע לבסוף\nאבל חשוב לזכור ולא לשכוח\nאת האנשים שמההתחלה גרמו לך לזרוח",
+        "answer": ["הורים", "ניסים ונעמה", "נעמה וניסים", "ההורים"],
+        "clue": "נו מי זה כבר יכול להיות"
+    },
+    "2025-02-06": {
+        "riddle": "מקווה שבחרתי נכון את המתנה\nולא סתם שנינו נתבאס\nכי את מביאה לי את האור הכי גדול\nוכל יום איתך הוא באמת כמו נס",
+        "answer": ["הופעה", "אמיר דדון"],
+        "clue": ""
+    },
+    "2025-02-07": {
+        "riddle": "היום המיוחל סוף סוף הגיע\nהיום המיוחד שהוא רק שלך\nואין מתנה יותר מיוחדת \nממשהו שהלב הוציא כשהוא נפתח",
+        "answer": ["ברכה"],
+        "clue": "קלאסי עידו"
     }
 }

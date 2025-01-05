@@ -127,11 +127,11 @@ user_answer = st.text_input("כתוב את תשובתך כאן:", key="riddle_an
 st.markdown("<div style='text-align: right;'>", unsafe_allow_html=True)
 if st.button("שלח תשובה", type="primary"):
     # Normalize answers (lowercase, strip whitespace)
-    correct_answer = riddle_data['answer'].lower().strip()
-    user_answer_normalized = user_answer.lower().strip()
+    correct_answer = riddle_data['answer']
+    user_answer_normalized = user_answer.strip()
 
     # Check answer
-    if user_answer_normalized == correct_answer:
+    if user_answer_normalized in correct_answer:
         st.success("כל הכבוד! 🎉")
         st.balloons()
     else:
@@ -139,4 +139,9 @@ if st.button("שלח תשובה", type="primary"):
         set_background('red_pastel.png')
         time.sleep(0.6)
         set_background()
+
+# Submit button aligned to the right
+st.markdown("<div style='text-align: right;'>", unsafe_allow_html=True)
+if st.button("רמז?", type="primary"):
+    st.markdown(f"<div class='rtl'><h3>{riddle_data['clue']}</h3></div>", unsafe_allow_html=True)
 st.markdown("</div>", unsafe_allow_html=True)

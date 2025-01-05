@@ -118,14 +118,9 @@ def create_calendar():
     table_html += "</table>"
 
     st.markdown(table_html, unsafe_allow_html=True)
-# add text about the creator of this page, Shachaf the greatest sister in the world
-st.markdown(f"<h5 style='text-align: center;'>Created by Shachaf the greatest sister in the world</h1>", unsafe_allow_html=True)
-
-
-
-
-
-
 
 # Run the calendar
 create_calendar()
+
+# add text about the creator of this page, Shachaf the greatest sister in the world
+st.markdown(f"<h5 style='text-align: center;'>Created by Shachaf the greatest sister in the world</h1>", unsafe_allow_html=True)

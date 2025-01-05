@@ -142,6 +142,7 @@ if st.button("שלח תשובה", type="primary"):
 
 # Submit button aligned to the right
 st.markdown("<div style='text-align: right;'>", unsafe_allow_html=True)
-if st.button("רמז?", type="primary"):
-    st.markdown(f"<div class='rtl'><h3>{riddle_data['clue']}</h3></div>", unsafe_allow_html=True)
+if riddle_data['clue'] != "":
+    if st.button("רמז?", type="primary"):
+        st.markdown(f"<div class='rtl'><h3>{riddle_data['clue']}</h3></div>", unsafe_allow_html=True)
 st.markdown("</div>", unsafe_allow_html=True)

@@ -148,5 +148,5 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
 
-st.markdown(f"<p style='text-align: center;'>Created by Shachaf the greatest sister in the world</p>", unsafe_allow_html=True)
+st.markdown(f"<p style='text-align: center;'>App created by Shachaf the greatest sister in the world</p>", unsafe_allow_html=True)
 

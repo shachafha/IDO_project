@@ -34,7 +34,7 @@ with open('riddles.json', 'r') as f:
 # Function to create the calendar
 def create_calendar():
     # Set the start and end dates
-    start_date = date(2025, 1, 5)
+    start_date = date(2025, 1, 9)
     end_date = date(2025, 2, 7)
 
     # Display current month and year
@@ -123,4 +123,4 @@ def create_calendar():
 create_calendar()
 
 # add text about the creator of this page, Shachaf the greatest sister in the world
-st.markdown(f"<p style='text-align: center;'>Created by Shachaf the greatest sister in the world</p>", unsafe_allow_html=True)
+st.markdown(f"<p style='text-align: center;'>App created by Shachaf the greatest sister in the world</p>", unsafe_allow_html=True)

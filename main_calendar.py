@@ -34,8 +34,8 @@ with open('riddles.json', 'r') as f:
 # Function to create the calendar
 def create_calendar():
     # Set the start and end dates
-    start_date = date(2024, 12, 9)
-    end_date = date(2025, 1, 2)
+    start_date = date(2024, 1, 9)
+    end_date = date(2025, 2, 7)
 
     # Display current month and year
     st.markdown(f"<h1 style='text-align: center;'>30 DAYS TO 30</h1>", unsafe_allow_html=True)

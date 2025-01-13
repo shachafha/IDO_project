@@ -61,8 +61,9 @@ def create_calendar():
             date_str = current_date.strftime("%Y-%m-%d")
             has_riddle = date_str in riddles
 
+            # get date.today() in israel time (gmt+2)
             # Determine button color based on the date's status
-            if current_date == date.today():
+            if current_date == date.today()+ timedelta(hours=2):
                 button_color = "#A7C7E7"  # Pastel blue
                 button_clickable = True
                 button_text = f"{current_date.day}\n{current_date.strftime('%b')}"
